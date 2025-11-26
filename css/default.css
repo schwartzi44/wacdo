@@ -1,0 +1,30 @@
+html {
+    height: 100%;
+}
+body{
+    height: 100%;
+   
+    }
+.backbody{
+    background-image: url("/img/images/mc_landing_banner.png");
+    background-size: 100% 50% ;
+    background-repeat: no-repeat;
+}
+.finfo{
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    height: auto;
+    width: 50%;
+    background: white;
+    padding: 5%;
+    border: 0px;
+    box-shadow: 8px 8px 12px #aaa;
+    border-radius: 30px;
+}
+.ffcursive{
+    font-family: cursive;
+}
+.btnchoix{
+    
+}

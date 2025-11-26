@@ -1,0 +1,52 @@
+.choix-item {
+    width: 300px;
+    min-width: 120px;
+    margin: 0 10px;
+    cursor: pointer;
+    border: 3px solid ;
+    border-radius: 8px;
+    transition: all 0.3s;
+    position: relative;
+    background-color: white;
+    border-color: gray;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.btnRetour{
+    width: auto;
+    height: 100%;
+    padding: 10px;
+    border: 1px solid ;
+    border-radius: 8px;
+    border-color: gray;
+    background-color: white;
+    color: gray;
+}
+
+.choix-item:hover {
+    transform: scale(1.02);
+}
+
+.choix-item.active {
+    border: 6px solid ;
+    border-color: #FFC107;
+}
+
+.choix-item img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+border-radius: 5px;
+}
+
+.choix-label {
+text-align: center;
+font-size: 116px2px;
+font-weight: 500;
+margin-top: 5px;
+color: #333;
+text-transform: capitalize;
+}
