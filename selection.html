@@ -46,7 +46,7 @@
 					<p class="category-description" id="categoryDescription">Un sandwich, une friture ou une salade et une
 						boisson</p>
 					<div class="row" id="productsContainer">
-						
+						<!-- chargement des produits d'une catégorie par la fonction js displayProducts- sollicitée à chaque click sur une catégorie -->
 					</div>
 				</div>
 			</div>
@@ -65,21 +65,7 @@
 						</div>
 					</div>
 					<div class="order-items" id="orderItems">
-						<!-- affichage de la commande en cours avecc la fonction displayOrder -->
-						<!-- <div class="row" id="item1">
-							<div class="col-2 float-md-start" style="width: 75%;font-size:x-small;">
-								<p class="text-break fw-bold mb-0"> 1 menu Maxi Best Of big Mac</p>
-								<ul class="">
-									<li>Frite</li>
-									<li>Sprite</li>
-									<li>Ketchup</li>
-									<li>Sauce deluxe</li>
-								</ul>
-							</div>
-							<div class="col-1 float-md-end	mx-auto my-0">
-								<img src="img/images/trash.png" class="mx-auto" alt="logo poubelle">
-							</div>
-						</div> -->
+						<!-- affichage de la commande en cours avec la fonction displayOrder -->
 						
 					</div>
 					<div class="row w-100  mx-2 border-2  border-top border-dark" id="order-footer">
@@ -190,7 +176,7 @@
         </div>
     </div>
 </div>
-<!-- feenêtre modale pour le choix des boissons dans le menu -->
+<!-- fenêtre modale pour le choix des boissons dans le menu -->
 <div class="modal modal-xl" id="modalChoixBoisson" aria-hidden="true" data-bs-backdrop="static" aria-labelledby="modalChoixBoisson" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -235,6 +221,7 @@
         </div>
     </div>
 </div>
+
 <!-- La liaison au script JS de Bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <!-- scripts persos -->
@@ -244,7 +231,7 @@
 	let currentCategory = "menus";
 	let order = [];
     let orderCounter = 0;
-	let orderTotal = 0;
+	//let orderTotal = 0;
 
 	//chargement des données depuis les fichiers json
         async function loadData() {
@@ -459,7 +446,7 @@
                 const details = document.createElement('ul');
                 details.className = 'order-item-details';
                 
-                // Add default details based on category
+                // ajout des détails d'un menu
                 if (item.category === 'menus') {                   
 					let li = document.createElement('li');
 					li.textContent = item.patate;
@@ -527,12 +514,20 @@
 			localStorage.setItem('nameProduct',product.nom);
 			localStorage.setItem('prix',product.prix);
 			//si produit est un menu alors lancement première fenêtre modale pour option taille
-			if (category === "menus"){
+			switch (category){
+				case "menus": 
+					localStorage.setItem('choixMaxi', "Oui");
+					document.getElementById('choixMaxiOui').setAttribute('class','col-4 ms-2 choix-item active float-md-start');
+					document.getElementById('choixMaxiNon').setAttribute('class','col-4 ms-2 choix-item float-md-end');
+					$ ( "#modalChoixMaxi" ) .modal ("show");
+					break;
+			}
+			/* if (category === "menus"){
 				localStorage.setItem('choixMaxi', "Oui");
 				document.getElementById('choixMaxiOui').setAttribute('class','col-4 ms-2 choix-item active float-md-start');
 				document.getElementById('choixMaxiNon').setAttribute('class','col-4 ms-2 choix-item float-md-end');
 				$ ( "#modalChoixMaxi" ) .modal ("show");
-			}
+			} */
 		}
 
 		// lancement de la fenêtre modale pour le choix du type dez patates
