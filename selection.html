@@ -17,6 +17,11 @@
 	<link rel="stylesheet" href="css/choix.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script>
+		function loadEvent(){
+			 
+		}
+	</script>
 </head>
 
 <body>
@@ -26,7 +31,7 @@
 				<div class="category-carousel">
 					<div class="container">
 						<div class="d-flex align-items-center">
-							<button class="category-arrow" id="prevCategory" onclick="scrollCategories(-1)">
+							<button class="category-arrow" id="prevCategory" >
 								<img src="img/images/fleche-slider.png" alt="fleche vers la gauche">
 							</button>
 							<div class="category-scroll flex-grow-1 mx-3" id="categoryScroll">
@@ -34,7 +39,7 @@
 									<!-- chargement des catégories par la fonction js displayCategories-->
 								</div>
 							</div>
-							<button class="category-arrow-right" id="nextCategory" onclick="scrollCategories(1)">
+							<button class="category-arrow-right" id="nextCategory">
 								<img src="img/images/fleche-slider.png" alt="fleche vers la droite">
 							</button>
 						</div>
@@ -98,7 +103,7 @@
 				<p>Menu <span id="nomMenu1">maxi Best Of</span> comprend un sandwich, une grande frite et une boisson 50cl</p>
 				
 				<div class="row justify-content-center ">
-					<div class="" id="choixMaxiOui" onclick="changeChoixMaxi('Oui')">
+					<div class="" id="choixMaxiOui" >
 						<div class="row w-75 mx-auto align-middle"> 
                             <img  id="img-menu1" src="img/categories/menus.png" alt="image menu taille max " class="">
 						</div>
@@ -106,7 +111,7 @@
                             Menu Maxi Best Of
                         </div>  
 					</div>
-					<div class="" id="choixMaxiNon" onclick="changeChoixMaxi('Non')">
+					<div class="" id="choixMaxiNon">
 						<div class="row w-75 h-auto mx-auto align-middle"> 
                             <img  id="img-menu2" src="img/categories/menus.png" alt="image menu taille max " class="">
                         </div>  
@@ -117,7 +122,7 @@
 				</div>
 				<div class="row justify-content-center my-5">
 					<div class="col-5 d-flex justify-content-center ">
-						<button class="btn btn-warning"  onclick="clickSuivantPatate()" aria-label="passage au choix des patates">
+						<button class="btn btn-warning" id="btnSuivantPatate"  aria-label="passage au choix des patates">
 							Etape suivante
 						</button>
 					</div>
@@ -130,14 +135,14 @@
     </div>
 </div>
 
-	<!-- choix menu frites ou patatos -->
+	<!-- choix menu frites ou patatoes -->
  <div class="modal modal-xl" id="modalChoixPatate" aria-hidden="true" data-bs-backdrop="static" aria-labelledby="modalChoixPatate" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-body">
 			<div class="container ">
 				<div class="row justify-content-between">
-				<button type="button" class="btnRetour" onclick="$ ( '#modalChoixPatate' ) .modal ('hide'); $ ( '#modalChoixMaxi' ) .modal ('show');" aria-label="Retour">Retour</button>
+				<button type="button"  id="btnRetourMaxi" class="btnRetour"  aria-label="Retour">Retour</button>
 				<button type="button" class="btn-close d-flex float-end" data-bs-dismiss="modal" aria-label="fermer fenêtre"></button>
 					<p></p>
 			    </div>
@@ -145,7 +150,7 @@
 				<p>Menu <span id="choixPatate">Frites, potatoes, la pomme de terre dans tous ses états</p>
 				
 				<div class="row justify-content-center my-5">
-					<div class="" id="choixFrite" onclick="changeChoixPatate('Frites')">
+					<div class="" id="choixFrite" >
 						<div class="row w-75 h-auto mx-auto align-middle"> 
                             <img  id="img-menu" src="img/frites/PETITE_FRITE.png" alt="image frites " class="modal-image-maxi">
                         </div>  
@@ -153,7 +158,7 @@
                            Frites
                         </div>  
 					</div>
-					<div class="" id="choixPotatoes" onclick="changeChoixPatate('Potatoes')">
+					<div class="" id="choixPotatoes" >
 						<div class="row w-75 h-auto mx-auto align-middle"> 	
                             <img  id="img-menu" src="img/frites/GRANDE_POTATOES.png" alt="image potatoes " class="modal-image-potatoes">
                         </div>  
@@ -164,7 +169,7 @@
 				</div>
 				<div class="row justify-content-center my-5">
 					<div class="col-5 d-flex justify-content-center ">
-						<button class="btn btn-warning"  onclick="clickSuivantBoisson()" aria-label="passage au choix des boissons">
+						<button class="btn btn-warning" id="btnSuivantBoisson"  aria-label="passage au choix des boissons">
 							Etape suivante
 						</button>
 					</div>
@@ -183,7 +188,7 @@
           <div class="modal-body">
 			<div class="container ">
 				<div class="row justify-content-between">
-				<button type="button" class="btnRetour" onclick="$ ( '#modalChoixBoisson' ) .modal ('hide'); $ ( '#modalChoixPatate' ) .modal ('show');" aria-label="Retour">Retour</button>
+				<button type="button" class="btnRetour" id="btnRetourPatate"  aria-label="Retour">Retour</button>
 				<button type="button" class="btn-close d-flex float-end" data-bs-dismiss="modal" aria-label="fermer fenêtre"></button>
 					<p></p>
 			    </div>
@@ -193,7 +198,7 @@
 				<div class="category-carousel">
 					<div class="container">
 						<div class="d-flex align-items-center">
-							<button class="category-arrow" id="prevDrink" onclick="scrollDrinks(-1)">
+							<button class="category-arrow" id="prevDrink">
 								<img src="img/images/fleche-slider.png" alt="fleche vers la gauche">
 							</button>
 							<div class="category-scroll flex-grow-1 mx-3" id="drinkScroll">
@@ -201,7 +206,7 @@
 									<!-- chargement des boissons par la fonction js displayDrink-->
 								</div>
 							</div>
-							<button class="category-arrow-right" id="nextDrink" onclick="scrollDrinks(1)">
+							<button class="category-arrow-right" id="nextDrink">
 								<img src="img/images/fleche-slider.png" alt="fleche vers la droite">
 							</button>
 						</div>
@@ -209,8 +214,8 @@
 				</div>
 				<div class="row justify-content-center my-5">
 					<div class="col-5 d-flex justify-content-center ">
-						<button class="btn btn-warning"  onclick="addToOrder()" aria-label="valider la commande">
-							Ajouter le menu à ma commande
+						<button class="btn btn-warning" id="btnSuivantSauce" aria-label="valider la commande">
+							Etape Suivante
 						</button>
 					</div>
 				</div>
@@ -222,16 +227,181 @@
     </div>
 </div>
 
+<!-- fenêtre modale pour le choix des sauces dans le menu -->
+<div class="modal modal-xl" id="modalChoixSauce" aria-hidden="true" data-bs-backdrop="static" aria-labelledby="modalChoixBoisson" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+			<div class="container ">
+				<div class="row justify-content-between">
+				<button type="button" class="btnRetour" id="btnRetourBoisson"  aria-label="Retour">Retour</button>
+				<button type="button" class="btn-close d-flex float-end" data-bs-dismiss="modal" aria-label="fermer fenêtre"></button>
+					<p></p>
+			    </div>
+				<p class="h3 mt-5">Choisissez votre sauce</p>
+				<p>Possibilité de choisir une sauce pour accompagner votre repas</p>
+				
+				<div class="category-carousel">
+					<div class="container">
+						<div class="d-flex align-items-center">
+							<button class="category-arrow" id="prevSauce">
+								<img src="img/images/fleche-slider.png" alt="fleche vers la gauche">
+							</button>
+							<div class="category-scroll flex-grow-1 mx-3" id="sauceScroll">
+								<div class="d-flex" id="sauceContainer">
+									<!-- chargement des sauces par la fonction js displaySauce-->
+								</div>
+							</div>
+							<button class="category-arrow-right" id="nextSauce">
+								<img src="img/images/fleche-slider.png" alt="fleche vers la droite">
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="row justify-content-center my-5">
+					<div class="col-5 d-flex justify-content-center ">
+						<button class="btn btn-warning" id="btnAjoutCommande" aria-label="valider la commande">
+							Ajoutera le menu à ma commande
+						</button>
+					</div>
+				</div>
+						
+			</div>
+           
+          </div>
+        </div>
+    </div>
+</div>
+
+<!-- choix taille boisson -->
+ <div class="modal fade modal-xl" id="modalChoixTailleBoisson" aria-hidden="true" data-bs-backdrop="static" aria-labelledby="modalChoixTailleBoisson" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+			<div class="container ">
+				<div class="row justify-content-end">
+				<button type="button" class="btn-close d-flex float-end" data-bs-dismiss="modal" aria-label="fermer fenêtre"></button>
+					<p></p>
+			    </div>
+				<p class="h3 mt-5">Une petite soif ?</p>
+				<p>Choisissez la taille de votre boisson, + 0,50€ pour le format 50cl</p>
+				
+				<div class="row justify-content-center ">
+					<div class="" id="choixGrand" >
+						<div class="row w-75 mx-auto align-middle"> 
+                            <img  id="imgChoixGrand"  alt="image boisson taille choixGrand " class="">
+						</div>
+                        <div  id="labelChoixGrand" class="choix-label"> 
+                            50 Cl
+                        </div>  
+					</div>
+					<div class="" id="choixPetit">
+						<div class="row w-75 h-auto mx-auto align-middle"> 
+							<p></p>
+                            <img  id="imgChoixPetit"  alt="image boisson taille petit " class="w-75 h-auto mx-auto">
+							<p></p>
+                        </div>  
+                        <div id="labelChoixPetit" class="choix-label"> 
+                            30 Cl
+                        </div> 
+					</div>
+				</div>
+				<div class="row justify-content-center m-5">
+					<div class="col-2 d-flex justify-content-around px-0 mx-0 border border-0 shadow">
+						<button type="button" id="btnMoinsBoisson" class="btnPlusMoins" aria-label="bouton pour diminuer de 1 la quantité">-
+						</button>
+						<div id="nbBoisson" class="label-nbBoisson">
+							
+						</div>
+						<button type="button" id="btnPlusBoisson" class="btnPlusMoins" aria-label="bouton pour augmenter de 1 la quantité">+
+						</button>
+						
+					</div>
+				</div>
+				<div class="row justify-content-center">
+					<div class="col-5 d-flex justify-content-center ">
+						<button type="button" class="btnAnnuler me-5" id="btnAnnulerBoisson"  aria-label="Retour">Annuler</button>
+						<button class="btn btn-warning ms-5" id="btnValiderTailleBoisson"  aria-label="valider le choix de la taille des boissons">
+							Ajouter à ma commande
+						</button>
+					</div>
+				</div>
+						
+			</div>
+           
+          </div>
+        </div>
+    </div>
+</div>
+<!-- modal produit autre que boisson ou menu avec la possibiilité de choisir la quantité-->
+ <div class="modal fade modal-xl" id="modalChoixProduitAutre" aria-hidden="true" data-bs-backdrop="static" aria-labelledby="possibilité d'augmenter la quantité et validation du produit" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+			<div class="container ">
+				<div class="row justify-content-end">
+				<button type="button" class="btn-close d-flex float-end" data-bs-dismiss="modal" aria-label="fermer fenêtre"></button>
+					
+			    </div>
+				<p class="h3 mt-5">Validation de la commande</p>
+
+				<p class="" id="nomProduitAutre">Possibilité de modifier la quantité avant de valider</p>
+				
+				<div class="row justify-content-center ">
+					<div class="col-4 ms-2 choix-item-taille active" id="produitAutre" >
+						<div class="row w-75 mx-auto align-middle"> 
+                            <img  id="imgProduitAutre"  alt="image du produit choisi " class="">
+						</div>
+                        <div  id="labelProduitAutre" class="choix-label"> 
+                    
+                        </div>  
+					</div>
+				</div>
+				<div class="row justify-content-center m-5">
+					<div class="col-2 d-flex justify-content-around px-0 mx-0 border border-0 shadow">
+						<button type="button" id="btnMoinsProduitAutre" class="btnPlusMoins" aria-label="bouton pour diminuer de 1 la quantité">-
+						</button>
+						<div id="nbProduitAutre" class="label-nbBoisson">
+							
+						</div>
+						<button type="button" id="btnPlusProduitAutre" class="btnPlusMoins" aria-label="bouton pour augmenter de 1 la quantité">+
+						</button>
+						
+					</div>
+				</div>
+				<div class="row justify-content-center">
+					<div class="col-5 d-flex justify-content-center ">
+						<button type="button" class="btnAnnuler me-5" id="btnAnnulerProduitAutre"  aria-label="Retour">Annuler</button>
+						<button class="btn btn-warning ms-5" id="btnValiderProduitAutre"  aria-label="valider le choix">
+							Ajouter à ma commande
+						</button>
+					</div>
+				</div>
+						
+			</div>
+           
+          </div>
+        </div>
+    </div>
+</div>
 <!-- La liaison au script JS de Bootstrap -->
+<script src="js/manage_events.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<!-- scripts persos -->
+<script src="js/category.js"></script>
+<script src="js/product.js"></script>
+<script src="js/drink.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/order.js"></script>
+<script src="js/sauce.js"></script>
+
 <script>
 	let categories = [];
 	//let products = [];
 	let currentCategory = "menus";
 	let order = [];
     let orderCounter = 0;
-	//let orderTotal = 0;
+	
+	
 
 	//chargement des données depuis les fichiers json
         async function loadData() {
@@ -251,333 +421,16 @@
                 displayCategories();
                 displayProducts(currentCategory);
 				displayOrder();
+				
             } catch (error) {
                 alert('Erreur lors du chargement des données. Assurez-vous que les fichiers categories.json et produits.json soient présents.');
             }
+			
         }
-
-		//afichage des catégories
-        function displayCategories() {
-            const container = document.getElementById('categoryContainer');
-            if (!container) {
-                return;
-            }
-            container.innerHTML = '';
-            
-            if (categories.length === 0) {
-                return;
-            }
-            
-            categories.forEach((category, index) => {
-                const categoryDiv = document.createElement('div');
-                categoryDiv.className = `category-item ${category.title === currentCategory ? 'active' : ''}`;
-               /*  categoryDiv.onclick = () => selectCategory(category.title); */
-				categoryDiv.addEventListener("click",()=> selectCategory(category.title));
-                
-                const img = document.createElement('img');
-                // Remove leading slash to make path relative
-                img.src = category.image.startsWith('/') ? category.image.substring(1) : category.image;
-                img.alt = category.title;
-                
-                const label = document.createElement('div');
-                label.className = 'category-label';
-                label.textContent = category.title;
-                
-                categoryDiv.appendChild(img);
-                categoryDiv.appendChild(label);
-                container.appendChild(categoryDiv);
-            });
-        }
-
-		// Select category
-        function selectCategory(categoryTitle) {
-            currentCategory = categoryTitle;
-            displayCategories();
-            displayProducts(categoryTitle);
-            
-            // liste des catégories pour afficher les titres (noms) et les descirptions respectives => à modifier par un fetch du fichier json à compléter
-            const titles = {
-                'menus': { title: 'Nos menus', desc: 'Un sandwich, une friture ou une salade et une boisson' },
-                'burgers': { title: 'Nos burgers', desc: 'Découvrez nos délicieux burgers' },
-                'boissons': { title: 'Nos boissons fraîches', desc: 'Une petite soif sucrée, légère, rafraîchissante' },
-                'frites': { title: 'Nos frites', desc: 'Des frites croustillantes à souhait' },
-                'encas': { title: 'Nos encas', desc: 'Des encas pour toutes les occasions' },
-                'wraps': { title: 'Nos wraps', desc: 'Des wraps savoureux et équilibrés' },
-                'salades': { title: 'Nos salades', desc: 'Des salades fraîches et gourmandes' },
-                'desserts': { title: 'Nos desserts', desc: 'Terminez en beauté avec nos desserts' },
-                'sauces': { title: 'Nos sauces', desc: 'Accompagnez vos plats avec nos sauces' }
-            };
-            
-            const info = titles[categoryTitle] || { title: categoryTitle, desc: '' };
-            document.getElementById('categoryTitle').textContent = info.title;
-            document.getElementById('categoryDescription').textContent = info.desc;
-        }
-
-        // Scroll categories
-        function scrollCategories(direction) {
-            const scrollContainer = document.getElementById('categoryScroll');
-            const scrollAmount = 150;
-            scrollContainer.scrollBy({
-                left: direction * scrollAmount,
-                behavior: 'smooth'
-            });
-        }
-
-		// Scroll drinks
-        function scrollDrinks(direction) {
-            const scrollContainer = document.getElementById('drinkScroll');
-            const scrollAmount = 150;
-            scrollContainer.scrollBy({
-                left: direction * scrollAmount,
-                behavior: 'smooth'
-            });
-        }
-
-		// affichage des produits
-        function displayProducts(categoryTitle) {
-            const container = document.getElementById('productsContainer');
-            container.innerHTML = '';
-            
-            const categoryProducts = products[categoryTitle] || [];
-            
-            if (categoryProducts.length === 0) {
-                container.innerHTML = '<div class="col-12"><div class="empty-state"><i class="bi bi-inbox"></i><p>Aucun produit disponible dans cette catégorie</p></div></div>';
-                return;
-            }
-            
-            categoryProducts.forEach(product => {
-                const col = document.createElement('div');
-                col.className = 'col-md-4 col-sm-6 mb-4';
-                
-                const card = document.createElement('div');
-                card.className = 'product-card';
-                //card.onclick = () => addToOrder(product, categoryTitle);
-                card.addEventListener("click",()=> clickProduit(product, categoryTitle));
-
-                const img = document.createElement('img');
-               
-                img.src = product.image.startsWith('/') ? product.image.substring(1) : product.image;
-                img.alt = product.nom;
-                img.className = 'product-image';
-                
-                const info = document.createElement('div');
-                info.className = 'product-info';
-                
-                const name = document.createElement('div');
-                name.className = 'product-name';
-                name.textContent = product.nom;
-                
-                const price = document.createElement('div');
-                price.className = 'product-price';
-                price.textContent = product.prix.toFixed(2) + '€';
-                
-                info.appendChild(name);
-                info.appendChild(price);
-                
-                card.appendChild(img);
-                card.appendChild(info);
-                col.appendChild(card);
-                container.appendChild(col);
-            });
-        }
-
-		function displayDrink(){
-			const chooseDrink = localStorage.getItem('choixboisson');
-			//alert (chooseDrink);
-			const categoryProductDrinks = products['boissons'] || [];
-			const container = document.getElementById('drinkContainer');
-            if (!container) {
-                return;
-            }
-            container.innerHTML = '';
-            categoryProductDrinks.forEach(product => { 			
-				const drinkDiv = document.createElement('div');
-				drinkDiv.className = `category-item ${product.nom === chooseDrink ? 'active' : ''}`;
-				drinkDiv.addEventListener("click",()=> selectDrink(product.nom));
-				const img = document.createElement('img');
-				img.src = product.image.startsWith('/') ? product.image.substring(1) : product.image;
-				img.alt = product.nom;
-				const label = document.createElement('div');
-				label.className = 'category-label';
-				label.textContent = product.nom;
-				
-				drinkDiv.appendChild(img);
-                drinkDiv.appendChild(label);
-                container.appendChild(drinkDiv);
-				  
-        	});
-
-		}
-
-		// affichage de la commande en cours
-        function displayOrder() {
-            const container = document.getElementById('orderItems');
-            
-             if (order.length === 0) {
-                container.innerHTML = '<div class="empty-state"><i class="bi bi-cart"></i><p>Votre panier est vide</p></div>';
-                document.getElementById('orderTotal').textContent = '0,00€';
-                return;
-            }
-            
-            container.innerHTML = '';
-            
-            order.forEach(item => {
-                const orderItem = document.createElement('div');
-                orderItem.className = 'order-item';
-                
-                const header = document.createElement('div');
-                header.className = 'order-item-header';
-                
-                const name = document.createElement('div');
-                name.className = 'order-item-name';
-                name.textContent = `1 ${item.nameProduct}`;
-                
-                const deleteBtn = document.createElement('button');
-                deleteBtn.className = 'order-item-delete';
-                deleteBtn.innerHTML = '<i class="bi bi-trash"></i>';
-                deleteBtn.onclick = (e) => {
-                    e.stopPropagation();
-                    removeFromOrder(item.id);
-                };
-                
-                header.appendChild(name);
-                header.appendChild(deleteBtn);
-                
-                const details = document.createElement('ul');
-                details.className = 'order-item-details';
-                
-                // ajout des détails d'un menu
-                if (item.category === 'menus') {                   
-					let li = document.createElement('li');
-					li.textContent = item.patate;
-					details.appendChild(li);
-					li = document.createElement('li');
-					li.textContent = item.drink;
-					details.appendChild(li);
-                    
-                } 
-                
-                orderItem.appendChild(header);
-                if (details.children.length > 0) {
-                    orderItem.appendChild(details);
-                }
-                container.appendChild(orderItem);
-				
-            });
-            
-            // Calcul du total de la commande
-            const total = order.reduce((sum, item) => sum + parseFloat(item.prix), 0);
-            document.getElementById('orderTotal').textContent = total.toFixed(2).replace('.', ',') + '€'; 
-			/* document.getElementById('orderTotal').textContent = orderTotal.toFixed(2).replace('.', ',') + '€'; */
-        }
-
-		// ajout d'un produit dans une commande
-        function addToOrder() {
-			switch (localStorage.getItem('category') ){
-				case "menus":	
-					let nomProduit = '';
-					if (localStorage.getItem('choixMaxi') === 'Oui'){
-						nomProduit = 'Maxi ';
-						let prix = parseFloat( localStorage.getItem('prix')) + 1;
-						localStorage.setItem('prix',prix);
-					}
-					nomProduit += localStorage.getItem('nameProduct');
-					order.push({               
-						id: orderCounter++,
-						nameProduct: nomProduit,
-						category: localStorage.getItem('category'),
-						patate: localStorage.getItem('choixPatate'),
-						drink: localStorage.getItem('choixboisson'),
-						prix: localStorage.getItem('prix')
-						});
-					break;
-				
-			}
-			$ ( "#modalChoixBoisson" ) .modal ("hide");
-            displayOrder();
-        }
-
-		// suppression d'un produit dans une commande
-        function removeFromOrder(orderId) {
-            order = order.filter(item => item.id !== orderId);
-
-            displayOrder();
-        }
-
-		function selectDrink(nomDrink){
-			localStorage.setItem('choixboisson', nomDrink);
-			displayDrink();
-		}
-
-		function clickProduit(product, category) { 
-			localStorage.setItem('category',category);
-			localStorage.setItem('nameProduct',product.nom);
-			localStorage.setItem('prix',product.prix);
-			//si produit est un menu alors lancement première fenêtre modale pour option taille
-			switch (category){
-				case "menus": 
-					localStorage.setItem('choixMaxi', "Oui");
-					document.getElementById('choixMaxiOui').setAttribute('class','col-4 ms-2 choix-item active float-md-start');
-					document.getElementById('choixMaxiNon').setAttribute('class','col-4 ms-2 choix-item float-md-end');
-					$ ( "#modalChoixMaxi" ) .modal ("show");
-					break;
-			}
-			/* if (category === "menus"){
-				localStorage.setItem('choixMaxi', "Oui");
-				document.getElementById('choixMaxiOui').setAttribute('class','col-4 ms-2 choix-item active float-md-start');
-				document.getElementById('choixMaxiNon').setAttribute('class','col-4 ms-2 choix-item float-md-end');
-				$ ( "#modalChoixMaxi" ) .modal ("show");
-			} */
-		}
-
-		// lancement de la fenêtre modale pour le choix du type dez patates
-		function clickSuivantPatate(product, category) {
-				localStorage.setItem('choixPatate', "Frites");
-				document.getElementById('choixFrite').setAttribute('class','col-4 ms-2 choix-item active float-md-start');
-				document.getElementById('choixPotatoes').setAttribute('class','col-4 ms-2 choix-item float-md-end');
-				$ ( "#modalChoixMaxi" ) .modal ("hide");
-				$ ( "#modalChoixPatate" ) .modal ("show");
-			}
-		
-		function clickSuivantBoisson(product, category){
-			localStorage.setItem('choixboisson', "Coca Cola");
-			$ ( "#modalChoixPatate" ) .modal ("hide");
-			$ ( "#modalChoixBoisson" ) .modal ("show");
-			displayDrink();
-		}
-
-		// alternance des choix pour menu maxi ou pas dans la fenêtre modale
-		function changeChoixMaxi(choix){
-			if (choix === 'Non'){
-				document.getElementById('choixMaxiOui').setAttribute('class','col-4 ms-2 choix-item float-md-end');
-				document.getElementById('choixMaxiNon').setAttribute('class','col-4 ms-2 choix-item active float-md-start');
-				localStorage.setItem('choixMaxi', "Non");
-			}
-			if (choix === 'Oui'){
-				document.getElementById('choixMaxiOui').setAttribute('class','col-4 ms-2 choix-item active float-md-start');
-				document.getElementById('choixMaxiNon').setAttribute('class','col-4 ms-2 choix-item float-md-end');
-				localStorage.setItem('choixMaxi', "Oui");
-			}
-		}
-
-		// alternance des choix pour le patates
-		function changeChoixPatate(choix){
-			if (choix === 'Potatoes'){
-				document.getElementById('choixFrite').setAttribute('class','col-4 ms-2 choix-item float-md-end');
-				document.getElementById('choixPotatoes').setAttribute('class','col-4 ms-2 choix-item active float-md-start');
-				localStorage.setItem('choixPatate', 'Potatoes');
-			}
-			if (choix === 'Frites'){
-				document.getElementById('choixFrite').setAttribute('class','col-4 ms-2 choix-item active float-md-start');
-				document.getElementById('choixPotatoes').setAttribute('class','col-4 ms-2 choix-item float-md-end');
-				localStorage.setItem('choixPatate', "Frites");
-			}
-		}
-
-
 
 		 // Initialize
         loadData();
+		loadEvent();
 </script>
 </body>
 

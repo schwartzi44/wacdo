@@ -57,6 +57,11 @@
     margin-right: 10px;
 }
 
+.order-item-prix {
+    flex: 1;
+    margin-right: 10px;
+}
+
 .order-item-delete {
     background: none;
     border: none;

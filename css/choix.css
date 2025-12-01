@@ -26,6 +26,31 @@
     color: gray;
 }
 
+.btnPlusMoins{
+    width: auto;
+    height: 100%;
+    padding: 10px;
+    border: 1px solid ;
+    border-radius: 8px;
+    border-color: orange;
+    background-color: orange;
+    color: black;
+}
+
+.btnAnnuler{
+    width: auto;
+    height: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
+    border: 2px solid ;
+    border-radius: 8px;
+    border-color: black;
+    background-color: white;
+    color: black;
+}
+
 .choix-item:hover {
     transform: scale(1.02);
 }
@@ -35,6 +60,7 @@
     border-color: #FFC107;
 }
 
+
 .choix-item img {
 width: 100%;
 height: 100%;
@@ -43,6 +69,62 @@ border-radius: 5px;
 }
 
 .choix-label {
+text-align: center;
+font-size: 116px2px;
+font-weight: 500;
+margin-top: 5px;
+color: #333;
+text-transform: capitalize;
+}
+
+.label-nbBoisson {
+width: 80px;
+min-width: 40x;
+text-align: center;
+font-size: 16px;
+margin-top: 5px;
+color: black;
+text-transform: capitalize;
+}
+
+.choix-item-taille {
+    width: 300px;
+    min-width: 120px;
+    margin: 0 10px;
+    cursor: pointer;
+    border: 3px solid ;
+    border-radius: 8px;
+    transition: all 0.3s;
+    position: relative;
+    background-color: white;
+    border-color: gray;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.choix-item-taille.active {
+    border: 6px solid ;
+    border-color: #FFC107;
+}
+
+
+.img-taille-50 img{
+width: 120%;
+height: 120%;
+object-fit: cover;
+border-radius: 5px;
+}
+
+.img-taille-30 img{
+width: 80%;
+height: 80%;
+object-fit: cover;
+border-radius: 5px;
+}
+
+.choix-label-taille {
 text-align: center;
 font-size: 116px2px;
 font-weight: 500;
