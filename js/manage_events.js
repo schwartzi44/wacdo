@@ -1,47 +1,31 @@
  async function loadEvent(){
 // gestion des évènement ment du scroller dans la caroussel des catégories
-    let prevCategory = document.getElementById("prevCategory");
-    prevCategory.addEventListener('click',scrollCategoriesMoins);
-    let nextCategory = document.getElementById("nextCategory");
-    nextCategory.addEventListener('click',scrollCategoriesPlus);
+    document.getElementById("prevCategory").addEventListener('click',scrollCategoriesMoins);
+    document.getElementById("nextCategory").addEventListener('click',scrollCategoriesPlus);
 
    //évènements pour la fenêtre modale pour le choix menu maxi "modalChoixMaxi"
-    var choixMaxiOui = document.getElementById('choixMaxiOui');
-    choixMaxiOui.addEventListener('click', changeChoixMaxiOui);
-    var choixMaxiNon = document.getElementById('choixMaxiNon');
-    choixMaxiNon.addEventListener('click', changeChoixMaxiNon);
-    var btnSuivantPatate = document.getElementById('btnSuivantPatate');
-    btnSuivantPatate.addEventListener('click',clickSuivantPatate);
+    document.getElementById('choixMaxiOui').addEventListener('click', changeChoixMaxiOui);
+    document.getElementById('choixMaxiNon').addEventListener('click', changeChoixMaxiNon);
+    document.getElementById('btnSuivantPatate').addEventListener('click',clickSuivantPatate);
    
    //évènements pour la fenêtre modale des choix de type patates "modalChoixPatate"
-    var btnRetourMaxi = document.getElementById('btnRetourMaxi');
-    btnRetourMaxi.addEventListener('click', btnRetourMaxi_click);
-    var choixFrite = document.getElementById('choixFrite');
-    choixFrite.addEventListener('click', changeChoixFrite);
-    var choixPotatoes = document.getElementById('choixPotatoes');
-    choixPotatoes.addEventListener('click', changeChoixPotatoes);
-    var btnSuivantBoisson = document.getElementById('btnSuivantBoisson');
-    btnSuivantBoisson.addEventListener('click',clickSuivantBoisson);
+    document.getElementById('btnRetourMaxi').addEventListener('click', btnRetourMaxi_click);
+    document.getElementById('choixFrite').addEventListener('click', changeChoixFrite);
+    document.getElementById('choixPotatoes').addEventListener('click', changeChoixPotatoes);
+    document.getElementById('btnSuivantBoisson').addEventListener('click',clickSuivantBoisson);
 
     //évènements pour la fenêtre modale des choix de boissons "modalChoixBoisson"
-    var btnRetourPatate = document.getElementById('btnRetourPatate');
-    btnRetourPatate.addEventListener('click', btnRetourPatate_click);
-    let prevDrink = document.getElementById("prevDrink");
-    prevDrink.addEventListener('click',scrollDrinksMoins);
-    let nextDrink = document.getElementById("nextDrink");
-    nextDrink.addEventListener('click',scrollDrinksPlus);
-    var btnSuivantSauce = document.getElementById('btnSuivantSauce');
-    btnSuivantSauce.addEventListener('click',clickSuivantSauce);
+    document.getElementById('btnRetourPatate').addEventListener('click', btnRetourPatate_click);
+    document.getElementById("prevDrink").addEventListener('click',scrollDrinksMoins);
+    document.getElementById("nextDrink").addEventListener('click',scrollDrinksPlus);
+    document.getElementById('btnSuivantSauce').addEventListener('click',clickSuivantSauce);
 
-     //évènements pour la fenêtre modale des choix des sauces "modalChoixSauce"
-    var btnRetourPatate = document.getElementById('btnRetourPatate');
-    btnRetourBoisson.addEventListener('click', btnRetourBoisson_click);
-    let prevSauce = document.getElementById("prevSauce");
-    prevSauce.addEventListener('click',scrollSaucesMoins);
-    let nextSauce = document.getElementById("nextSauce");
-    nextSauce.addEventListener('click',scrollSaucesPlus);
-    let btnAjoutCommande = document.getElementById("btnAjoutCommande");
-    btnAjoutCommande.addEventListener('click',addToOrder)
+     //évènements pour la fenêtre modale des choix des sauces "modalChoixSauce" 
+    document.getElementById('btnRetourPatate').addEventListener('click', btnRetourBoisson_click);
+    document.getElementById("prevSauce").addEventListener('click',scrollSaucesMoins);
+    document.getElementById("nextSauce").addEventListener('click',scrollSaucesPlus);
+
+    document.getElementById("btnAjoutCommande").addEventListener('click',addToOrder)
 
     //évènements pour la fenêtre modale du choix de la taille des boissons "modalChoixTailleBoisson"
     document.getElementById('btnPlusBoisson').addEventListener('click',plusBoisson);
@@ -56,6 +40,15 @@
     document.getElementById('btnMoinsProduitAutre').addEventListener('click', moinsProduitAutre);
     document.getElementById('btnAnnulerProduitAutre').addEventListener('click',btnAnnulerProduitAutre_click);
     document.getElementById('btnValiderProduitAutre').addEventListener('click',addToOrder);
+
+    //évènements pour la finalisation de la commande
+    document.getElementById('btnAbandonOrder').addEventListener('click',clearOrder);
+    document.getElementById('btnPayerOrder').addEventListener('click',payOrder);
+
+    // Generate new order number
+    document.getElementById('orderNumber').textContent = Math.floor(Math.random() * 100);
+    document.getElementById('orderPlace').textContent = Math.floor(Math.random() * 1000);
+    document.getElementById('labelCommande').textContent = localStorage.getItem('labelCommande');
  }
 
 function btnRetourMaxi_click(){
@@ -80,3 +73,9 @@ function btnAnnulerBoisson_click(){
 function btnAnnulerProduitAutre_click(){
     $ ( '#modalChoixProduitAutre' ) .modal ('hide'); 
 }
+
+
+function btnEnrNum_click(){
+        location.href = 'fin_commande.html';
+    }
+     

@@ -65,6 +65,7 @@ function displayOrder() {
 
     // Calcul du total de la commande
     const total = order.reduce((sum, item) => sum + parseFloat(item.prix), 0);
+    localStorage.setItem('totalCommande',total.toFixed(2).replace('.', ',') + '€');
     document.getElementById('orderTotal').textContent = total.toFixed(2).replace('.', ',') + '€'; 
     /* document.getElementById('orderTotal').textContent = orderTotal.toFixed(2).replace('.', ',') + '€'; */
 }
@@ -91,7 +92,7 @@ function addToOrder() {
             });
             break;
         case "boissons":
-            let nomBoisson = localStorage.getItem('nbBoisson') + ' <' + localStorage.getItem('nameProduct') + '> ' + localStorage.getItem('choixTailleBoisson') + ' Cl';
+            let nomBoisson = localStorage.getItem('nameProduct') + ' ' + localStorage.getItem('choixTailleBoisson') + ' Cl - Quantité : ' + localStorage.getItem('nbBoisson');
             var prix;
             if (localStorage.getItem('choixTailleBoisson') === '50'){
                 prix = (parseFloat( localStorage.getItem('prix')) + 0.5) * parseInt(localStorage.getItem("nbBoisson"));
@@ -108,7 +109,7 @@ function addToOrder() {
             });
             break;
         default:
-            let nomProduitAutre = localStorage.getItem('nbProduitAutre') + ' <' + localStorage.getItem('nameProduct') + '>';
+            let nomProduitAutre =  localStorage.getItem('nameProduct') + ' - Quantité : ' + localStorage.getItem('nbProduitAutre');
              prix = parseFloat( localStorage.getItem('prix')) * parseInt(localStorage.getItem("nbProduitAutre"));;
             localStorage.setItem('prix',prix);
             order.push({               
@@ -127,7 +128,25 @@ displayOrder();
 
 // suppression d'un produit dans une commande
 function removeFromOrder(orderId) {
-order = order.filter(item => item.id !== orderId);
+    order = order.filter(item => item.id !== orderId);
+    displayOrder();
+}
 
-displayOrder();
+// abandon de la commande
+function clearOrder() {
+    if(order.length > 0) {
+        if (confirm('Êtes-vous sûr de vouloir abandonner cette commande ?')) {
+            order = [];
+            displayOrder();
+        }
+    }
+}
+
+// Réglemgent de la commande
+function payOrder() {
+    if (order.length > 0) {
+         order = [];
+    //displayOrder();
+    location.href = 'num_chevalet.html';
+    }
 }

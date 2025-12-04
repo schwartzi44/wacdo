@@ -31,9 +31,16 @@
             </div>
         <div class="row  my-5 mx-auto ">
             <div class="col-8 mx-auto">
-                <button  class="btn btn-warning w-25  ">Enregistrer le numéro</button>    
+                <button  class="btn btn-warning w-25 " id="btnEnrNum">Enregistrer le numéro</button>    
             </div>
         </div>
     </div>
+<script>
+    document.getElementById('btnEnrNum').addEventListener('click',btnEnrNum_click);
+    function btnEnrNum_click(){
+        location.href = 'fin_commande.html';
+    }
+</script>
+    
 </body>
 </html>

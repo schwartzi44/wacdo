@@ -82,7 +82,9 @@ width: 80px;
 min-width: 40x;
 text-align: center;
 font-size: 16px;
-margin-top: 5px;
+display: flex;
+justify-content: center;
+align-items: center;
 color: black;
 text-transform: capitalize;
 }
@@ -131,4 +133,50 @@ font-weight: 500;
 margin-top: 5px;
 color: #333;
 text-transform: capitalize;
+}
+
+.lieu-item {
+    width: 250px;
+    height: auto;
+    min-width: 120px;
+    margin: 10px;
+    cursor: pointer;
+    border: 3px solid;
+    border-color: #FFC107;
+    border-radius: 8px;
+    position: relative;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.lieu-item:hover {
+    transform: scale(1.01);
+}
+
+
+.lieu-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.lieu-label {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 5px;
+    color: #333;
+    text-transform: capitalize;
+}
+
+.quantite-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0%;
+    margin: 0%;
 }

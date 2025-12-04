@@ -62,11 +62,11 @@
 					</div>
 					<div class="row w-100  mx-2 border-2  border-bottom border-dark" id="order-header">
 						<div class="col-2 float-md-start" style="width: 75%;">
-							<p class="text-break my-2" style="font-size:x-small;"> Commande numéro</br> Sur place : <span
-									class="fw-bold">326</span></p>
+							<p class="text-break my-2" style="font-size:x-small;"> Commande numéro</br> <span id="labelCommande">Sur piazza : </span><span
+									class="fw-bold" id="orderPlace">326</span></p>
 						</div>
 						<div class="col-1 float-md-end	">
-							<p class="fs-1 my-2">72</p>
+							<p class="fs-1 my-2" id="orderNumber">72</p>
 						</div>
 					</div>
 					<div class="order-items" id="orderItems">
@@ -79,8 +79,8 @@
 							<span class="order-total-amount" id="orderTotal">0,00€</span>
 						</div>
 						<div class="order-buttons mb-3">
-							<button class="btn-abandon" onclick="clearOrder()">Abandon</button>
-							<button class="btn-payer" onclick="payOrder()">Payer</button>
+							<button class="btn-abandon"id="btnAbandonOrder">Abandon</button>
+							<button class="btn-payer" id="btnPayerOrder">Payer</button>
 						</div>
 					</div>
 				</div>
@@ -307,10 +307,10 @@
 					</div>
 				</div>
 				<div class="row justify-content-center m-5">
-					<div class="col-2 d-flex justify-content-around px-0 mx-0 border border-0 shadow">
+					<div class="col-2 d-flex justify-content-around quantite-card">
 						<button type="button" id="btnMoinsBoisson" class="btnPlusMoins" aria-label="bouton pour diminuer de 1 la quantité">-
 						</button>
-						<div id="nbBoisson" class="label-nbBoisson">
+						<div id="nbBoisson" class="label-nbBoisson ">
 							
 						</div>
 						<button type="button" id="btnPlusBoisson" class="btnPlusMoins" aria-label="bouton pour augmenter de 1 la quantité">+
@@ -358,7 +358,7 @@
 					</div>
 				</div>
 				<div class="row justify-content-center m-5">
-					<div class="col-2 d-flex justify-content-around px-0 mx-0 border border-0 shadow">
+					<div class="col-2 d-flex justify-content-around quantite-card">
 						<button type="button" id="btnMoinsProduitAutre" class="btnPlusMoins" aria-label="bouton pour diminuer de 1 la quantité">-
 						</button>
 						<div id="nbProduitAutre" class="label-nbBoisson">
