@@ -108,7 +108,7 @@
 
 .order-total-label {
     font-size: 14px;
-    color: #666;
+    color: #2c2b2b;
 }
 
 .order-total-amount {
@@ -139,7 +139,6 @@ background-color: #FFC107;
 color: #333;
 border: none;
 padding: 12px;
-
 border-radius: 5px;
 font-weight: bold;
 }
@@ -175,7 +174,7 @@ font-weight: bold;
 .empty-state {
     text-align: center;
     padding: 60px 20px;
-    color: #999;
+    color: #2c2b2b;
 }
 
 .empty-state i {

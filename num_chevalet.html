@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="option sezrvice à table numéro de commande  pour l'inscrire sur le chavalet">
-    
+    <title>appel à prendre un chevalet</title>
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="css/default.css">
+  <link rel="stylesheet" href="css/chevalet.css" >
 
 </head>
 <body class="backbody">
-    <div class="container position-absolute top-50 start-50 translate-middle w-75">
-        <div  class="row bg-white w-75 h-auto  pt-5 px-2 py-4 rounded-5 shadow" >
-                <p class="fs-1">Pour être servi à table,</p>
+    <main class="container position-absolute top-50 start-50 translate-middle w-75">
+        <section  class="row bg-white w-75 h-auto  pt-5 px-2 py-4 rounded-5 shadow" >
+                <p class="h1">Pour être servi à table,</p>
                 <p class="fs-xs-5 fs-md-2">Récupérez un chevalet et indiquez le numéro inscrit dessus </p>
                 <!-- <div class="container align-items-center px-5">   -->
                 <div class="row w-50 mx-auto  fw-bold text-center fs-1">
@@ -28,13 +29,13 @@
                 </div>
                 <!-- </div>  -->
                 
-            </div>
+            </section>
         <div class="row  my-5 mx-auto ">
             <div class="col-8 mx-auto">
-                <button  class="btn btn-warning w-25 " id="btnEnrNum">Enregistrer le numéro</button>    
+                <button  class="flex btn btn-enr " id="btnEnrNum">Enregistrer le numéro</button>    
             </div>
         </div>
-    </div>
+    </main>
 <script>
     document.getElementById('btnEnrNum').addEventListener('click',btnEnrNum_click);
     function btnEnrNum_click(){

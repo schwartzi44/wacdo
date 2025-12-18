@@ -1,0 +1,10 @@
+
+.btn-enr {
+flex: 1;
+background-color: #FFC107;
+color: #333;
+border: none;
+padding: 12px;
+border-radius: 5px;
+font-weight: bold;
+}

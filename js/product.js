@@ -28,7 +28,7 @@ function displayProducts(categoryTitle) {
         const info = document.createElement('div');
         info.className = 'product-info';
         
-        const name = document.createElement('div');
+        const name = document.createElement('h5');
         name.className = 'product-name';
         name.textContent = product.nom;
         

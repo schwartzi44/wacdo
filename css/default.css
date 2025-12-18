@@ -6,9 +6,9 @@ body{
    
     }
 .backbody{
-    background-image: url("/img/images/mc_landing_banner.png");
+    background-image: url("../img/images/mc_landing_banner.png");
    background-size:contain;
-background-position: top;
+    background-position: top;
     background-repeat: no-repeat;
 }
 .finfo{
