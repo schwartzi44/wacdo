@@ -22,7 +22,7 @@ function displayProducts(categoryTitle) {
         const img = document.createElement('img');
         
         img.src = product.image.startsWith('/') ? product.image.substring(1) : product.image;
-        img.alt = product.nom;
+        img.alt = 'image du produit '+product.nom;
         img.className = 'product-image';
         
         const info = document.createElement('div');

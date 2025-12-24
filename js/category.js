@@ -19,7 +19,7 @@
                 const img = document.createElement('img');
                 // Remove leading slash to make path relative
                 img.src = category.image.startsWith('/') ? category.image.substring(1) : category.image;
-                img.alt = category.title;
+                img.alt = 'image de la catégorie '+category.title;
                 
                 const label = document.createElement('div');
                 label.className = 'category-label';
