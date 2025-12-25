@@ -21,7 +21,7 @@
     document.getElementById('btnSuivantSauce').addEventListener('click',clickSuivantSauce);
 
      //évènements pour la fenêtre modale des choix des sauces "modalChoixSauce" 
-    document.getElementById('btnRetourPatate').addEventListener('click', btnRetourBoisson_click);
+    document.getElementById('btnRetourBoisson').addEventListener('click', btnRetourBoisson_click);
     document.getElementById("prevSauce").addEventListener('click',scrollSaucesMoins);
     document.getElementById("nextSauce").addEventListener('click',scrollSaucesPlus);
 

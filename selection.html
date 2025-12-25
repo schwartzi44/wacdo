@@ -23,7 +23,7 @@
 		}
 	</script>
 
-</script>
+
 </head>
 
 <body>
@@ -64,7 +64,7 @@
 					</div>
 					<div class="row w-100  mx-2 border-2  border-bottom border-dark" id="order-header">
 						<div class="col-2 float-md-start" style="width: 75%;">
-							<p class="text-break my-2" style="font-size small;"> Commande numéro</br> <span id="labelCommande">Sur piazza : </span><span
+							<p class="text-break my-2" style="font-size: medium;"> Commande numéro <span id="labelCommande">Sur piazza : </span><span
 									class="fw-bold" id="orderPlace">326</span></p>
 						</div>
 						<div class="col-1 float-md-end	">
@@ -81,7 +81,7 @@
 							<span class="order-total-amount" id="orderTotal">0,00€</span>
 						</div>
 						<div class="order-buttons mb-3">
-							<button class="btn-abandon"id="btnAbandonOrder">Abandon</button>
+							<button class="btn-abandon" id="btnAbandonOrder">Abandon</button>
 							<button class="btn-payer" id="btnPayerOrder">Payer</button>
 						</div>
 					</div>
@@ -92,7 +92,7 @@
 	<!-- fenêtres modales-->
 
 <!-- choix menu maxi -->
- <div class="modal fade modal-xl" id="modalChoixMaxi" aria-hidden="true" data-bs-backdrop="static" aria-label="modalChoixMaxiLabel" tabindex="-1">
+ <div class="modal fade modal-xl" id="modalChoixMaxi" aria-hidden="true" data-bs-backdrop="static"  tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-body">
@@ -138,7 +138,7 @@
 </div>
 
 	<!-- choix menu frites ou patatoes -->
- <div class="modal modal-xl" id="modalChoixPatate" aria-hidden="true" data-bs-backdrop="static" aria-label="modalChoixPatate" tabindex="-1">
+ <div class="modal modal-xl" id="modalChoixPatate" aria-hidden="true" data-bs-backdrop="static"  tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-body">
@@ -149,12 +149,12 @@
 					<p></p>
 			    </div>
 				<p class="h3 mt-5">Choisissez votre accompagnement</p>
-				<p>Menu <span id="choixPatate">Frites, potatoes, la pomme de terre dans tous ses états</p>
+				<p id="choixPatate">Menu Frites, potatoes, la pomme de terre dans tous ses états</p>
 				
 				<div class="row justify-content-center my-5">
 					<div class="" id="choixFrite" >
 						<div class="row w-75 h-auto mx-auto align-middle"> 
-                            <img  id="img-menu" src="img/frites/PETITE_FRITE.png" alt="image frites " class="modal-image-maxi">
+                            <img  id="img-petite-frite" src="img/frites/PETITE_FRITE.png" alt="image frites " class="modal-image-maxi">
                         </div>  
                         <div class="choix-label"> 
                            Frites
@@ -162,7 +162,7 @@
 					</div>
 					<div class="" id="choixPotatoes" >
 						<div class="row w-75 h-auto mx-auto align-middle"> 	
-                            <img  id="img-menu" src="img/frites/GRANDE_POTATOES.png" alt="image potatoes " class="modal-image-potatoes">
+                            <img  id="img-grande-frite" src="img/frites/GRANDE_POTATOES.png" alt="image potatoes " class="modal-image-potatoes">
                         </div>  
                         <div class="choix-label "> 
                             Potatoes
@@ -184,7 +184,7 @@
     </div>
 </div>
 <!-- fenêtre modale pour le choix des boissons dans le menu -->
-<div class="modal modal-xl" id="modalChoixBoisson" aria-hidden="true" data-bs-backdrop="static" aria-label="modalChoixBoisson" tabindex="-1">
+<div class="modal modal-xl" id="modalChoixBoisson" aria-hidden="true" data-bs-backdrop="static"  tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-body">
@@ -230,7 +230,7 @@
 </div>
 
 <!-- fenêtre modale pour le choix des sauces dans le menu -->
-<div class="modal modal-xl" id="modalChoixSauce" aria-hidden="true" data-bs-backdrop="static" aria-label="modalChoixBoisson" tabindex="-1">
+<div class="modal modal-xl" id="modalChoixSauce" aria-hidden="true" data-bs-backdrop="static" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-body">
@@ -291,7 +291,7 @@
 				<div class="row justify-content-center ">
 					<div class="" id="choixGrand" >
 						<div class="row w-75 mx-auto align-middle"> 
-                            <img  id="imgChoixGrand"  alt="image boisson taille choixGrand " class="">
+                            <img  id="imgChoixGrand" src="preciserdansjs" alt="image boisson taille choixGrand " class="">
 						</div>
                         <div  id="labelChoixGrand" class="choix-label"> 
                             50 Cl
@@ -300,7 +300,7 @@
 					<div class="" id="choixPetit">
 						<div class="row w-75 h-auto mx-auto align-middle"> 
 							<p></p>
-                            <img  id="imgChoixPetit"  alt="image boisson taille petit " class="w-75 h-auto mx-auto">
+                            <img  id="imgChoixPetit" src="preciserdansjs" alt="image boisson taille petit " class="w-75 h-auto mx-auto">
 							<p></p>
                         </div>  
                         <div id="labelChoixPetit" class="choix-label"> 
@@ -336,7 +336,7 @@
     </div>
 </div>
 <!-- modal produit autre que boisson ou menu avec la possibiilité de choisir la quantité-->
- <div class="modal fade modal-xl" id="modalChoixProduitAutre" aria-hidden="true" data-bs-backdrop="static" aria-label="possibilité d'augmenter la quantité et validation du produit" tabindex="-1">
+ <div class="modal fade modal-xl" id="modalChoixProduitAutre" aria-hidden="true" data-bs-backdrop="static" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-body">
